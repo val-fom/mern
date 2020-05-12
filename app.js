@@ -1,16 +1,22 @@
 const express = require('express');
 const config = require('config');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 const PORT = config.get('port');
+
+app.use(bodyParser.json());
+
+app.use('/api/auth', require('./routes/auth.routes'));
 
 async function start() {
   try {
     await mongoose.connect(config.get('mongoUri'), {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useCreateIndex: true,
     });
     console.log('DB Connected!');
   } catch (error) {
