@@ -19,7 +19,7 @@ async function start() {
     });
     console.log('DB Connected!');
   } catch (error) {
-    console.log(error.message);
+    console.log('Server error', error.message);
     process.exit(1);
   }
 }
