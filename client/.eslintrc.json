@@ -9,6 +9,7 @@
 		"plugin:@typescript-eslint/recommended",
 		"airbnb",
 		"prettier",
+		"prettier/react",
 		"prettier/@typescript-eslint"
 	],
 	"globals": {
@@ -29,7 +30,6 @@
 		"react-hooks"
 	],
 	"rules": {
-		"react/jsx-one-expression-per-line": "off",
 		"react/jsx-filename-extension": [
 			1,
 			{
